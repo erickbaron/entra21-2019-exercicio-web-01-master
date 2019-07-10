@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/EscolaIndex.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <a href="/escola/cadastro" id="botao-cadastro">Cadastrar</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (int i = 0; i < ViewBag.Escolas.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.Escolas[i].Id</td>
+                        <td>@ViewBag.Escolas[i].Nome</td>
+                        <td>
+                            <a href="/escola/editar?id=@ViewBag.Escolas[i].Id" id="botao-editar">Editar</a>
+                            <a href="/escola/apagar?id=@ViewBag.Escolas[i].Id" id="botao-apagar">Apagar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Ação</th>
+
+                </tr>
+
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

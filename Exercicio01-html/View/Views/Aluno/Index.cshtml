@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    
+</head>
+<body>
+    <div>
+        <a href="/aluno/cadastro" id="botao-cadastro">Cadastro Aluno</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>1ª Nota</th>
+                    <th>2ª Nota</th>
+                    <th>3ª Nota</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (int i = 0; i < ViewBag.Alunos.Count; i++)
+                {
+                    <tr>
+                        <td>@ViewBag.Alunos[i].Id</td>
+                        <td>@ViewBag.Alunos[i].Nome</td>
+                        <td>@ViewBag.Alunos[i].Cpf</td>
+                        <td>@ViewBag.Alunos[i].Nota1</td>
+                        <td>@ViewBag.Alunos[i].Nota2</td>
+                        <td>@ViewBag.Alunos[i].Nota3</td>
+                        <td>
+                            <a href="/aluno/editar?id=@ViewBag.Alunos[i].Id" id="botao-editar">Editar</a>
+                            <a href="/aluno/apagar?id=@ViewBag.Alunos[i].Id" id="botao-apagar">Apagar</a>
+
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>1ª Nota</th>
+                    <th>2ª Nota</th>
+                    <th>3ª Nota</th>
+
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
