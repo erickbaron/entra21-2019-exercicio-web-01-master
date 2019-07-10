@@ -1,4 +1,7 @@
-﻿CREATE TABLE escolas(
+﻿DROP TABLE escolas;
+DROP TABLE alunos;
+
+CREATE TABLE escolas(
 id INT PRIMARY KEY IDENTITY(1,1),
 nome VARCHAR(100),
 );

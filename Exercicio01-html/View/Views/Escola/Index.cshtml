@@ -13,7 +13,7 @@
 </head>
 <body>
     <div>
-        <a href="/escola/cadastro" id="botao-cadastro">Cadastrar</a>
+        <a href="/escola/cadastro" id="botao-cadastro" class="botao">Cadastrar</a>
         <table>
             <thead>
                 <tr>
@@ -29,7 +29,7 @@
                     <tr>
                         <td>@ViewBag.Escolas[i].Id</td>
                         <td>@ViewBag.Escolas[i].Nome</td>
-                        <td>
+                        <td id="coluna-acao">
                             <a href="/escola/editar?id=@ViewBag.Escolas[i].Id" id="botao-editar">Editar</a>
                             <a href="/escola/apagar?id=@ViewBag.Escolas[i].Id" id="botao-apagar">Apagar</a>
                         </td>
